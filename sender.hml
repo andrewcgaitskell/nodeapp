@@ -1,4 +1,4 @@
-script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
+script src="node_modules/peerjs/dist/peerjs.min.js"></script>
 <script type="text/javascript">
 	var peer = new Peer(
   'senderid', {
