@@ -1,9 +1,13 @@
-<script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
+<script src="node_modules/peerjs/dist/peerjs.min.js"></script>
 <script type="text/javascript">
   // https://github.com/peers/peerjs
 
   // go here to get your own key
-	var peerjsPeer = new Peer({key: 'xxxYOURKEYGOESHERExxxx'});
+	var peerjsPeer = new Peer('andrewcgaitskell', {
+        host: '35.214.117.188' ,
+        port: 9000 ,
+        path: '/myapp'
+});
 	peerjsPeer.on('open', function() {
 		console.log('My peerjsPeer ID is: ', peerjsPeer.id);
 	});
