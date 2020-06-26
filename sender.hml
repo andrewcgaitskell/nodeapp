@@ -1,0 +1,27 @@
+script src="http://cdn.peerjs.com/0.3/peer.min.js"></script>
+<script type="text/javascript">
+	var peer = new Peer(
+  'senderid', {
+        host: '35.214.117.188' ,
+        port: 9000 ,
+        path: '/myapp'
+}
+  
+  );
+	peer.on('open', function(id) {
+		console.log('My peer ID is: ' + id);
+	});
+	
+	function connect('senderid'){
+		var conn = peer.connect('senderid');
+		conn.on('open', function() {
+			// Receive messages
+			conn.on('data', function(data) {
+				console.log('Received', data);
+			});
+			
+			// Send messages
+			conn.send('Hello from phone!');
+		});		
+	}
+</script>
